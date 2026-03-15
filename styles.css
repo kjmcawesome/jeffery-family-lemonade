@@ -53,6 +53,7 @@ a {
 
 .topbar,
 .brand-lockup,
+.topbar-side,
 .hero-actions,
 .hero-highlights,
 .section-heading,
@@ -78,6 +79,10 @@ a {
 }
 
 .brand-lockup {
+  gap: 12px;
+}
+
+.topbar-side {
   gap: 12px;
 }
 
@@ -179,6 +184,42 @@ a {
 .button-secondary {
   border-color: var(--line);
   background: #fffef7;
+}
+
+.qr-card {
+  display: grid;
+  grid-template-columns: 72px auto;
+  gap: 10px;
+  align-items: center;
+  min-width: 210px;
+  padding: 8px 10px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: #fffef7;
+}
+
+.qr-card img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  border: 1px solid rgba(45, 36, 18, 0.12);
+  background: #fffef7;
+}
+
+.qr-card span {
+  display: grid;
+  line-height: 1.1;
+}
+
+.qr-card strong {
+  font-family: "Baloo 2", cursive;
+  font-size: 1.1rem;
+}
+
+.qr-card small {
+  color: var(--muted);
+  font-size: 0.83rem;
 }
 
 .hero-actions,
@@ -655,6 +696,16 @@ a {
   .topbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .topbar-side {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .qr-card {
+    width: 100%;
+    min-width: 0;
   }
 
   .section-note {
