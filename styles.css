@@ -108,6 +108,28 @@ a {
   background: var(--card);
 }
 
+.event-banner {
+  padding: 16px 18px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 30%),
+    linear-gradient(135deg, #fff7ca, #ffd85f);
+  border-style: dashed;
+}
+
+.event-banner h2 {
+  margin: 0;
+  font-family: "Baloo 2", cursive;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 0.95;
+}
+
+.event-banner p:last-child {
+  margin: 8px auto 0;
+  max-width: 44ch;
+  color: var(--muted);
+}
+
 .hero {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
