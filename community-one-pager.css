@@ -1,0 +1,277 @@
+@page {
+  size: Letter portrait;
+  margin: 0.45in;
+}
+
+:root {
+  --paper: #fffef7;
+  --ink: #2d2412;
+  --muted: #5d4a28;
+  --line: #d6bf7a;
+  --warm: #fff7cb;
+  --sun: #ffd85f;
+  --accent: #f7c631;
+  --card: #fff9e5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #f3f0e8;
+  color: var(--ink);
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  padding: 16px;
+}
+
+.sheet {
+  width: 8.5in;
+  min-height: 11in;
+  margin: 0 auto;
+  padding: 0.42in;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 22%),
+    linear-gradient(180deg, rgba(255, 240, 189, 0.4), rgba(255, 255, 255, 0) 18%),
+    var(--paper);
+  border: 3px solid var(--line);
+  border-radius: 28px;
+  box-shadow: 0 18px 32px rgba(45, 36, 18, 0.12);
+  display: grid;
+  gap: 0.22in;
+}
+
+.kicker,
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.kicker {
+  font-size: 13px;
+}
+
+.eyebrow {
+  font-size: 11px;
+}
+
+.hero-panel,
+.card,
+.footer-band,
+.cta-box {
+  border: 2px solid var(--line);
+  border-radius: 22px;
+}
+
+.hero-panel {
+  padding: 20px 20px 18px;
+  background: linear-gradient(135deg, #fff8d8, #ffe588);
+}
+
+.hero-grid,
+.body-grid,
+.footer-band {
+  display: grid;
+  gap: 18px;
+}
+
+.hero-grid {
+  grid-template-columns: 1.45fr 0.8fr;
+  align-items: start;
+  margin-top: 10px;
+}
+
+.hero-copy h1,
+.qr-panel h2,
+.card h2,
+.footer-band h2 {
+  margin: 0;
+  font-family: "Baloo 2", cursive;
+  line-height: 0.95;
+}
+
+.hero-copy h1 {
+  font-size: 48px;
+  max-width: 10ch;
+}
+
+.lede,
+.card p,
+.footer-band p,
+.secondary-note,
+.qr-panel p,
+.cta-box span {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.42;
+  font-size: 15px;
+}
+
+.lede {
+  margin-top: 10px;
+  max-width: 46ch;
+  font-size: 17px;
+}
+
+.event-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.event-pill {
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(255, 254, 247, 0.86);
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 3px;
+}
+
+.event-pill strong {
+  font-size: 13px;
+}
+
+.event-pill span {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.qr-panel {
+  padding: 16px;
+  background: rgba(255, 254, 247, 0.9);
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.qr-panel img {
+  width: 2.1in;
+  height: 2.1in;
+  padding: 10px;
+  border-radius: 18px;
+  background: #fffef7;
+  border: 1px solid rgba(45, 36, 18, 0.1);
+}
+
+.qr-panel h2 {
+  font-size: 28px;
+}
+
+.body-grid {
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.card {
+  padding: 18px;
+  background: var(--card);
+}
+
+.card h2 {
+  font-size: 30px;
+  margin-top: 4px;
+}
+
+.bullet-list {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.accent-card {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.75), transparent 35%),
+    linear-gradient(135deg, #fff9e1, #ffeeb0);
+}
+
+.mini-menu {
+  margin-top: 12px;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.secondary-note {
+  margin-top: 12px;
+}
+
+.footer-band {
+  grid-template-columns: 1.15fr 0.85fr;
+  padding: 18px;
+  background: linear-gradient(180deg, #fffdf4, #fff7d4);
+  align-items: center;
+}
+
+.footer-band h2 {
+  font-size: 34px;
+  margin-top: 4px;
+}
+
+.cta-box {
+  padding: 16px;
+  background: #fffef7;
+  display: grid;
+  gap: 6px;
+}
+
+.cta-box strong {
+  font-family: "Baloo 2", cursive;
+  font-size: 28px;
+  line-height: 0.96;
+}
+
+@media screen and (max-width: 920px) {
+  body {
+    padding: 8px;
+  }
+
+  .sheet {
+    width: 100%;
+    min-height: auto;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .hero-grid,
+  .body-grid,
+  .footer-band,
+  .event-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: #fff;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .sheet {
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-width: 2px;
+    break-inside: avoid;
+  }
+}
