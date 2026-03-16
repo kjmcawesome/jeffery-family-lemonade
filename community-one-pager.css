@@ -209,154 +209,18 @@ body {
 }
 
 .map-frame {
-  position: relative;
   margin-top: 12px;
   height: 320px;
   border: 3px solid var(--black);
-  background:
-    linear-gradient(180deg, rgba(255, 248, 213, 0.95), rgba(255, 252, 241, 0.95)),
-    repeating-linear-gradient(0deg, rgba(35, 23, 11, 0.04) 0 1px, transparent 1px 36px),
-    repeating-linear-gradient(90deg, rgba(35, 23, 11, 0.04) 0 1px, transparent 1px 36px);
+  background: #fffdf6;
   overflow: hidden;
 }
 
-.road {
-  position: absolute;
-  background: #2e2418;
-}
-
-.road::after {
-  content: "";
-  position: absolute;
-  inset: 42% 0 42% 0;
-  background: repeating-linear-gradient(90deg, rgba(255, 248, 213, 0.9) 0 18px, transparent 18px 30px);
-}
-
-.road-middlefield {
-  left: 78px;
-  top: 22px;
-  bottom: 28px;
-  width: 18px;
-}
-
-.road-middlefield::after,
-.road-marmona::after {
-  inset: 0 42% 0 42%;
-  background: repeating-linear-gradient(180deg, rgba(255, 248, 213, 0.9) 0 18px, transparent 18px 30px);
-}
-
-.road-willow {
-  left: 24px;
-  right: 26px;
-  top: 88px;
-  height: 18px;
-}
-
-.road-blackburn {
-  left: 24px;
-  right: 48px;
-  top: 218px;
-  height: 18px;
-}
-
-.road-marmona {
-  right: 116px;
-  top: 118px;
-  bottom: 26px;
-  width: 18px;
-}
-
-.road-label {
-  position: absolute;
-  font-size: 13px;
-  font-weight: 800;
-  color: #3e311d;
-  background: rgba(255, 253, 246, 0.92);
-  padding: 2px 6px;
-}
-
-.label-middlefield {
-  left: 18px;
-  top: 18px;
-}
-
-.label-willow {
-  left: 122px;
-  top: 60px;
-}
-
-.label-blackburn {
-  left: 122px;
-  top: 246px;
-}
-
-.label-marmona {
-  right: 40px;
-  top: 140px;
-  transform: rotate(90deg);
-  transform-origin: center;
-}
-
-.landmark {
-  position: absolute;
-  display: grid;
-  gap: 4px;
-  align-items: center;
-}
-
-.landmark strong {
-  font-size: 14px;
-  background: rgba(255, 253, 246, 0.94);
-  padding: 4px 6px;
-}
-
-.landmark-market {
-  left: 50px;
-  top: 58px;
-}
-
-.landmark-stand {
-  right: 40px;
-  top: 195px;
-}
-
-.pin {
-  width: 20px;
-  height: 20px;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
-  border: 2px solid var(--black);
-}
-
-.pin::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  left: 4px;
-  top: 4px;
-  background: #fff8dc;
-}
-
-.pin-market {
-  background: var(--market);
-}
-
-.pin-stand {
-  background: var(--yellow-deep);
-}
-
-.walk-note {
-  position: absolute;
-  left: 118px;
-  top: 138px;
-  padding: 6px 10px;
-  border: 2px solid var(--black);
-  background: #fff2b6;
-  font-size: 13px;
-  font-weight: 800;
-  max-width: 162px;
+.map-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .map-caption {

@@ -14,6 +14,7 @@ OUTPUT.mkdir(parents=True, exist_ok=True)
 
 PDF_PATH = OUTPUT / "jeffery-family-lemonade-community-one-pager.pdf"
 QR_PATH = ROOT / "qr-code.png"
+MAP_PATH = ROOT / "google-maps-area.png"
 
 PAGE_WIDTH, PAGE_HEIGHT = letter
 MARGIN = 0.4 * inch
@@ -48,85 +49,6 @@ def draw_paragraph(c, text, x, y_top, width, style):
     _, height = para.wrap(width, 1000)
     para.drawOn(c, x, y_top - height)
     return height
-
-
-def draw_pin(c, x, y, fill):
-    c.saveState()
-    c.translate(x, y)
-    c.rotate(-45)
-    c.setFillColor(fill)
-    c.setStrokeColor(PALETTE["black"])
-    c.setLineWidth(1.5)
-    c.roundRect(-8, -8, 16, 16, 6, fill=1, stroke=1)
-    c.setFillColor(PALETTE["cream"])
-    c.circle(0, 0, 3.2, fill=1, stroke=0)
-    c.restoreState()
-
-
-def draw_map(c, x, y, w, h):
-    c.setFillColor(PALETTE["cream"])
-    c.setStrokeColor(PALETTE["black"])
-    c.setLineWidth(2.2)
-    c.rect(x, y, w, h, fill=1, stroke=1)
-
-    c.setFillColor(colors.HexColor("#2e2418"))
-    c.rect(x + 80, y + 28, 18, h - 56, fill=1, stroke=0)  # Middlefield
-    c.rect(x + 22, y + h - 108, w - 44, 18, fill=1, stroke=0)  # Willow
-    c.rect(x + 22, y + 78, w - 70, 18, fill=1, stroke=0)  # Blackburn
-    c.rect(x + w - 136, y + 44, 18, h - 162, fill=1, stroke=0)  # Marmona
-
-    c.setStrokeColor(colors.HexColor("#fff8d5"))
-    c.setLineWidth(1.2)
-    for dx in [89]:
-        yy = y + 38
-        while yy < y + h - 38:
-            c.line(x + dx, yy, x + dx, yy + 12)
-            yy += 24
-    for yy in [y + h - 99, y + 87]:
-        xx = x + 34
-        while xx < x + w - 34:
-            c.line(xx, yy, xx + 12, yy)
-            xx += 24
-    yy = y + 54
-    while yy < y + h - 126:
-        c.line(x + w - 127, yy, x + w - 127, yy + 12)
-        yy += 24
-
-    label_style = pstyle(font="Helvetica-Bold", size=11, color=PALETTE["muted"])
-
-    def label(text, lx, ly, width=110):
-        c.setFillColor(colors.Color(1, 0.99, 0.96, alpha=0.92))
-        c.rect(lx, ly - 4, width, 18, fill=1, stroke=0)
-        draw_paragraph(c, text, lx + 4, ly + 10, width - 8, label_style)
-
-    label("Middlefield Rd", x + 10, y + h - 24, 92)
-    label("Willow Rd", x + 126, y + h - 56, 70)
-    label("Blackburn Ave", x + 126, y + 66, 90)
-
-    c.saveState()
-    c.translate(x + w - 58, y + h - 136)
-    c.rotate(90)
-    label("Marmona Ave", 0, 0, 88)
-    c.restoreState()
-
-    market_x = x + 72
-    market_y = y + h - 86
-    stand_x = x + w - 126
-    stand_y = y + 87
-    draw_pin(c, market_x, market_y, PALETTE["market"])
-    draw_pin(c, stand_x, stand_y, PALETTE["yellow_deep"])
-
-    landmark_style = pstyle(font="Helvetica-Bold", size=11, color=PALETTE["ink"])
-    c.setFillColor(colors.Color(1, 0.99, 0.96, alpha=0.95))
-    c.rect(market_x - 22, market_y + 12, 96, 18, fill=1, stroke=0)
-    draw_paragraph(c, "Willows Market", market_x - 18, market_y + 24, 88, landmark_style)
-    c.rect(stand_x - 18, stand_y + 12, 96, 18, fill=1, stroke=0)
-    draw_paragraph(c, "Lemonade Stand", stand_x - 14, stand_y + 24, 88, landmark_style)
-
-    c.setFillColor(colors.HexColor("#fff2b6"))
-    c.roundRect(x + 128, y + 128, 150, 34, 10, fill=1, stroke=1)
-    walk_style = pstyle(font="Helvetica-Bold", size=10.5, color=PALETTE["ink"], alignment=1)
-    draw_paragraph(c, "A short neighborhood walk from Willows Market", x + 136, y + 151, 134, walk_style)
 
 
 def build_pdf():
@@ -205,8 +127,10 @@ def build_pdf():
     c.rect(map_x, map_y, map_w, map_h, fill=1, stroke=1)
     draw_paragraph(c, "FIND THE STAND", map_x + 16, map_y + map_h - 16, map_w - 32, kicker)
     draw_paragraph(c, "Look for us just past Willows Market", map_x + 16, map_y + map_h - 34, map_w - 32, pstyle(font="Helvetica-Bold", size=22, leading=24, color=PALETTE["ink"]))
-    draw_map(c, map_x + 16, map_y + 28, map_w - 32, 180)
-    draw_paragraph(c, "Cross streets only for privacy. Use the QR code if you want the live flyer and map link.", map_x + 16, map_y + 24, map_w - 32, pstyle(font="Helvetica", size=11.5, leading=14, color=PALETTE["muted"]))
+    c.setFillColor(PALETTE["cream"])
+    c.rect(map_x + 16, map_y + 28, map_w - 32, 180, fill=1, stroke=1)
+    c.drawImage(str(MAP_PATH), map_x + 16, map_y + 28, width=map_w - 32, height=180, mask="auto")
+    draw_paragraph(c, "Google Maps area view with the stand marked near Blackburn + Marmona and Willows Market included as a landmark.", map_x + 16, map_y + 24, map_w - 32, pstyle(font="Helvetica", size=11.5, leading=14, color=PALETTE["muted"]))
 
     info_x = map_x + map_w + 14
     info_w = CONTENT_W - map_w - 14
