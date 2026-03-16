@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jeffery Family Lemonade Community One-Pager</title>
+    <title>Jeffery Family Lemonade Community Poster</title>
     <meta
       name="description"
-      content="Print-first community handout for the Jeffery Family Lemonade stand event on Saturday, March 21, 2026."
+      content="Print-first concert-poster style community handout for the Jeffery Family Lemonade stand on Saturday, March 21, 2026."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,73 +17,103 @@
     <link rel="stylesheet" href="./community-one-pager.css" />
   </head>
   <body>
-    <main class="sheet">
-      <section class="hero-panel">
-        <p class="kicker">School + Community Flyer</p>
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Jeffery Family Lemonade</p>
-            <h1>Lemonade stand this Saturday.</h1>
-            <p class="lede">
-              Come by on <strong>Saturday, March 21, 2026</strong> between <strong>noon and 3pm</strong>
-              for a cheerful neighborhood stop with kid-built lemonade, bright signs, and sunny energy.
-            </p>
+    <main class="poster">
+      <section class="poster-topband">One Afternoon Only • Saturday, March 21, 2026 • Menlo Park</section>
 
-            <div class="event-strip">
-              <div class="event-pill">
-                <strong>When</strong>
-                <span>Saturday, March 21, 2026</span>
-              </div>
-              <div class="event-pill">
-                <strong>Time</strong>
-                <span>Noon to 3pm</span>
-              </div>
-              <div class="event-pill">
-                <strong>Where</strong>
-                <span>Blackburn + Marmona, Menlo Park</span>
-              </div>
-            </div>
-          </div>
-
-          <aside class="qr-panel">
-            <img src="./qr-code.svg" alt="QR code for the Jeffery Family Lemonade website" />
-            <h2>Scan for the full site</h2>
-            <p>Directions, menu, and the online flyer are all in one place.</p>
-          </aside>
-        </div>
-      </section>
-
-      <section class="body-grid">
-        <article class="card">
-          <p class="eyebrow">Why stop by</p>
-          <h2>A simple neighborhood event for kids and families</h2>
-          <ul class="bullet-list">
-            <li>Fresh lemonade made as a family project.</li>
-            <li>Easy drop-in timing for a weekend walk or bike ride.</li>
-            <li>Friendly stop for parents, classmates, neighbors, and local supporters.</li>
-          </ul>
-        </article>
-
-        <article class="card accent-card">
-          <p class="eyebrow">What to expect</p>
-          <h2>Classic favorites will be ready</h2>
-          <p class="mini-menu">Classic Sunshine, Berry Blush, and Frozen Lemondade.</p>
-          <p class="secondary-note">For full menu details and directions, use the QR code above.</p>
-        </article>
-      </section>
-
-      <section class="footer-band">
-        <div>
-          <p class="eyebrow">Find us</p>
-          <h2>Corner of Blackburn and Marmona in Menlo Park</h2>
-          <p>
-            This handout keeps the location privacy-safe with cross streets only. Use the QR code if you want
-            the live flyer and map link.
+      <section class="hero-block">
+        <div class="hero-copy">
+          <p class="kicker">Jeffery Family Lemonade</p>
+          <h1>
+            Lemonade
+            <span>This Saturday</span>
+          </h1>
+          <p class="lede">
+            Come by between <strong>noon and 3pm</strong> for a bright little neighborhood stop filled with
+            kid-built lemonade, cheerful signs, and a sunny family project.
           </p>
         </div>
-        <div class="cta-box">
-          <strong>Come between noon and 3pm</strong>
-          <span>One afternoon only. Bring a smile and stop by for a cup.</span>
+
+        <aside class="qr-ticket">
+          <img src="./qr-code.svg" alt="QR code for the Jeffery Family Lemonade website" />
+          <p class="qr-label">Scan for site, map, and menu.</p>
+        </aside>
+      </section>
+
+      <section class="detail-strip">
+        <div class="detail-pill">
+          <strong>When</strong>
+          <span>Saturday, March 21, 2026</span>
+        </div>
+        <div class="detail-pill">
+          <strong>Time</strong>
+          <span>Noon to 3pm</span>
+        </div>
+        <div class="detail-pill">
+          <strong>Where</strong>
+          <span>Blackburn + Marmona, Menlo Park</span>
+        </div>
+      </section>
+
+      <section class="main-grid">
+        <article class="map-card">
+          <div class="card-header">
+            <p class="kicker">Find the stand</p>
+            <h2>Look for us just past Willows Market</h2>
+          </div>
+
+          <div class="map-frame" aria-label="Map showing the lemonade stand relative to Willows Market">
+            <div class="road road-middlefield"></div>
+            <div class="road road-willow"></div>
+            <div class="road road-blackburn"></div>
+            <div class="road road-marmona"></div>
+
+            <div class="road-label label-middlefield">Middlefield Rd</div>
+            <div class="road-label label-willow">Willow Rd</div>
+            <div class="road-label label-blackburn">Blackburn Ave</div>
+            <div class="road-label label-marmona">Marmona Ave</div>
+
+            <div class="landmark landmark-market">
+              <span class="pin pin-market"></span>
+              <strong>Willows Market</strong>
+            </div>
+
+            <div class="landmark landmark-stand">
+              <span class="pin pin-stand"></span>
+              <strong>Lemonade Stand</strong>
+            </div>
+
+            <div class="walk-note">A short neighborhood walk from Willows Market</div>
+          </div>
+
+          <p class="map-caption">
+            Cross streets only for privacy. The live site linked in the QR code has the map link and the full
+            flyer.
+          </p>
+        </article>
+
+        <article class="info-stack">
+          <section class="info-card highlight-card">
+            <p class="kicker">Why come by</p>
+            <h2>A sweet little neighborhood stop</h2>
+            <ul>
+              <li>Fresh lemonade made together as a kid-and-parent project.</li>
+              <li>Easy stop for families, classmates, teachers, and nearby neighbors.</li>
+            </ul>
+          </section>
+
+          <section class="info-card menu-card">
+            <p class="kicker">On the stand</p>
+            <h2>Classic favorites available</h2>
+            <p>Classic Sunshine, Berry Blush, and Frozen Lemondade.</p>
+            <p class="small-note">Use the QR code for the full flyer, menu, and directions.</p>
+          </section>
+        </article>
+      </section>
+
+      <section class="footer-banner">
+        <div>
+          <p class="kicker">Come through</p>
+          <h2>Noon to 3pm at Blackburn + Marmona</h2>
         </div>
       </section>
     </main>
