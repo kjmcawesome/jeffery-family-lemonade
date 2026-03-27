@@ -6,19 +6,19 @@ from pypdf import PageObject, PdfReader, PdfWriter, Transformation
 
 
 ROOT = Path(__file__).resolve().parents[1]
-HTML_PATH = ROOT / "community-one-pager.html"
+HTML_PATH = ROOT / "stand-menu.html"
 TMP_POSTER_DIR = ROOT / "tmp" / "pdfs"
 OUTPUT_DIR = ROOT / "output" / "pdf"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 TMP_POSTER_DIR.mkdir(parents=True, exist_ok=True)
 
-INTERMEDIATE_PDF_PATH = TMP_POSTER_DIR / "community-one-pager.full.pdf"
-POSTER_PNG_PATH = TMP_POSTER_DIR / "community-poster-mockup.png"
-PDF_PATH = OUTPUT_DIR / "jeffery-family-lemonade-community-one-pager.pdf"
-DOWNLOAD_COPY = Path("/Users/kj/Downloads/jeffery-family-lemonade-community-one-pager.pdf")
+INTERMEDIATE_PDF_PATH = TMP_POSTER_DIR / "stand-menu.full.pdf"
+POSTER_PNG_PATH = TMP_POSTER_DIR / "stand-menu-mockup.png"
+PDF_PATH = OUTPUT_DIR / "jeffery-family-lemonade-stand-menu.pdf"
+DOWNLOAD_COPY = Path("/Users/kj/Downloads/jeffery-family-lemonade-stand-menu.pdf")
 
 VIEWPORT_WIDTH = "1100"
-TARGET_SELECTOR = ".flyer-sheet"
+TARGET_SELECTOR = ".menu-sheet"
 LETTER_W = 612
 LETTER_H = 792
 
@@ -87,7 +87,7 @@ final class Delegate: NSObject, WKNavigationDelegate {
                     let width = rect["width"] as? Double,
                     let height = rect["height"] as? Double
                 else {
-                    fputs("Could not resolve poster bounds.\n", stderr)
+                    fputs("Could not resolve menu bounds.\n", stderr)
                     NSApp.terminate(nil)
                     return
                 }
@@ -152,7 +152,7 @@ app.run()
 
 
 def render_full_sheet():
-    with tempfile.TemporaryDirectory(prefix="lemonade-pdf-") as tmp_dir:
+    with tempfile.TemporaryDirectory(prefix="lemonade-menu-pdf-") as tmp_dir:
         swift_path = Path(tmp_dir) / "render.swift"
         swift_path.write_text(SWIFT_RENDERER)
         subprocess.run(
@@ -185,7 +185,7 @@ def fit_to_letter():
     writer = PdfWriter()
     writer.add_page(target_page)
     with PDF_PATH.open("wb") as handle:
-        writer.write(handle)
+      writer.write(handle)
 
     DOWNLOAD_COPY.write_bytes(PDF_PATH.read_bytes())
 

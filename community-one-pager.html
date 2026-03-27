@@ -3,101 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jeffery Family Lemonade Community Poster</title>
+    <title>Jeffery Family Lemonade Flyer</title>
     <meta
       name="description"
-      content="Print-first concert-poster style community handout for the Jeffery Family Lemonade stand on Saturday, March 21, 2026."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
+      content="Printable Jeffery Family Lemonade flyer for Saturday, April 18, 2026."
     />
     <link rel="stylesheet" href="./community-one-pager.css" />
   </head>
   <body>
-    <main class="poster">
-      <section class="poster-topband">One Afternoon Only • Saturday, March 21, 2026 • Menlo Park</section>
-
-      <section class="hero-block">
-        <div class="hero-copy">
-          <p class="kicker">Jeffery Family Lemonade</p>
-          <h1>
-            Lemonade
-            <span>This Saturday</span>
-          </h1>
-          <p class="lede">
-            Come by between <strong>noon and 3pm</strong> for a bright little neighborhood stop filled with
-            kid-built lemonade, cheerful signs, and a sunny family project.
-          </p>
+    <main class="flyer-sheet">
+      <section class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-badge" aria-hidden="true">
+            <span class="badge-lemon"></span>
+            <span class="badge-straw"></span>
+          </div>
+          <div class="brand-copy">
+            <p class="eyebrow">Family-run neighborhood pop-up</p>
+            <h1>Jeffery Family Lemonade</h1>
+          </div>
         </div>
 
-        <aside class="qr-ticket">
-          <img src="./qr-code.svg" alt="QR code for the Jeffery Family Lemonade website" />
-          <p class="qr-label">Scan for site, map, and menu.</p>
+        <aside class="qr-card">
+          <img src="./map-qr.svg" alt="QR code for Google Maps directions to Jeffery Family Lemonade" />
+          <div>
+            <strong>Scan for directions</strong>
+            <span>Open Google Maps</span>
+          </div>
         </aside>
       </section>
 
-      <section class="detail-strip">
-        <div class="detail-pill">
-          <strong>When</strong>
-          <span>Saturday, March 21, 2026</span>
-        </div>
-        <div class="detail-pill">
-          <strong>Time</strong>
-          <span>Noon to 3pm</span>
-        </div>
-        <div class="detail-pill">
-          <strong>Where</strong>
-          <span>Blackburn + Marmona, Menlo Park</span>
+      <section class="event-banner">
+        <p class="eyebrow">Saturday, April 18, 2026</p>
+        <h2>Noon to 3pm</h2>
+        <p>Blackburn + Marmona, Menlo Park near Willows Market.</p>
+      </section>
+
+      <section class="hero-card">
+        <article class="hero-copy">
+          <p class="eyebrow">Fresh squeezed and family approved</p>
+          <h3>Fresh cups for a sunny afternoon.</h3>
+          <p class="hero-text">
+            Classic lemonade and slushy lemonade, served by the Jeffery family for one cheerful neighborhood stop.
+          </p>
+
+          <div class="pill-row">
+            <span class="info-pill"><strong>Classic + slushy</strong><small>two stand favorites</small></span>
+            <span class="info-pill"><strong>Willows Market</strong><small>easy landmark nearby</small></span>
+          </div>
+        </article>
+
+        <div class="scene-card" aria-hidden="true">
+          <div class="scene-sky">
+            <div class="scene-sun"></div>
+          </div>
+          <div class="scene-sign">Squeeze the Day</div>
+          <div class="stand-wrap">
+            <div class="stand-awning">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="stand-leg left"></div>
+            <div class="stand-leg right"></div>
+            <div class="stand-counter">
+              <div class="pitcher">
+                <div class="pitcher-fill"></div>
+                <div class="pitcher-handle"></div>
+              </div>
+              <div class="cup cup-a"></div>
+              <div class="cup cup-b"></div>
+              <div class="cup cup-c"></div>
+            </div>
+            <div class="stand-label">Lemonade</div>
+          </div>
         </div>
       </section>
 
-      <section class="main-grid">
-        <article class="map-card">
-          <div class="card-header">
-            <p class="kicker">Find the stand</p>
-            <h2>Look for us just past Willows Market</h2>
+      <section class="bottom-grid">
+        <article class="map-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Find us near Willows Market</p>
+              <h4>Blackburn + Marmona, Menlo Park</h4>
+            </div>
           </div>
-
           <div class="map-frame">
             <img
-              src="./google-maps-area.png"
-              alt="Google Maps view showing the lemonade stand near Blackburn and Marmona with Willows Market as a landmark"
+              class="map-image"
+              src="./google-maps-poster-area.png"
+              alt="Map showing the corner of Blackburn and Marmona near Willows Market"
             />
+            <span class="map-pin" aria-hidden="true"></span>
+          </div>
+          <p class="map-caption">Pin marks the corner.</p>
+        </article>
+
+        <article class="menu-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Menu Board</p>
+              <h4>Two stand favorites</h4>
+            </div>
           </div>
 
-          <p class="map-caption">
-            Google Maps area view with the stand marked near Blackburn + Marmona and Willows Market included as
-            a landmark.
-          </p>
+          <div class="menu-list">
+            <section class="menu-item">
+              <div class="menu-chip">Lemonade</div>
+              <p>Fresh-squeezed classic with bright lemon flavor and easy sweetness.</p>
+            </section>
+
+            <section class="menu-item">
+              <div class="menu-chip">Slushy Lemonade</div>
+              <p>Slushy, extra cold, and built for a warm afternoon.</p>
+            </section>
+          </div>
         </article>
-
-        <article class="info-stack">
-          <section class="info-card highlight-card">
-            <p class="kicker">Why come by</p>
-            <h2>A sweet little neighborhood stop</h2>
-            <ul>
-              <li>Fresh lemonade made together as a kid-and-parent project.</li>
-              <li>Easy stop for families, classmates, teachers, and nearby neighbors.</li>
-            </ul>
-          </section>
-
-          <section class="info-card menu-card">
-            <p class="kicker">On the stand</p>
-            <h2>Classic favorites available</h2>
-            <p>Classic Sunshine, Berry Blush, and Frozen Lemondade.</p>
-            <p class="small-note">Use the QR code for the full flyer, menu, and directions.</p>
-          </section>
-        </article>
-      </section>
-
-      <section class="footer-banner">
-        <div>
-          <p class="kicker">Come through</p>
-          <h2>Noon to 3pm at Blackburn + Marmona</h2>
-        </div>
       </section>
     </main>
   </body>
